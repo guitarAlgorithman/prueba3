@@ -6,6 +6,16 @@ from bs4 import BeautifulSoup
 from transformers import pipeline
 import json
 import os
+from dotenv import load_dotenv
+import uvicorn
+
+
+
+BASEDIR = os.path.abspath(os.path.dirname(__file__))
+load_dotenv(os.path.join(BASEDIR, '.env'))
+port = os.getenv("PORT")
+
+print(port)
 
 app = FastAPI()
 
@@ -128,4 +138,6 @@ def feedback(request: FeedbackRequest):
 def read_root():
     return {"message": "Bienvenido a la API de preguntas y respuestas"}
 
-# Comando para ejecutar la aplicación: uvicorn main:app --reload
+# Run the app with Uvicorn using the specified port
+if __name__ == "__main__":
+    uvicorn.run(app, host="0.0.0.0", port=int(port))
