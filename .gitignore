@@ -1,0 +1,38 @@
+# Ignorar el entorno virtual
+./venv
+.env
+.venv/
+venv
+
+# Archivos de configuración del entorno
+.idea/
+.vscode/
+__pycache__/
+*.py[cod]
+
+# Archivos de log
+*.log
+
+# Archivos de entorno
+.env
+*.env
+
+# Archivos generados automáticamente
+*.sqlite3
+db.sqlite3
+
+# Carpetas de compilación y distribución
+build/
+dist/
+*.egg-info/
+
+# Ignorar archivos de cache de pytest y otros
+.pytest_cache/
+.tox/
+.coverage
+.cache
+
+# Archivos de dependencias de Python
+Pipfile
+Pipfile.lock
+poetry.lock
