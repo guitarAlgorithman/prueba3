@@ -7,7 +7,18 @@ from transformers import pipeline
 import json
 import os
 
+from fastapi.middleware.cors import CORSMiddleware
+
 app = FastAPI()
+
+#cambio importamte
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # Ruta del archivo JSON donde se guardarán las preguntas y respuestas seleccionadas
 json_file = 'user_feedback.json'
